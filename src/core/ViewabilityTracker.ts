@@ -194,6 +194,9 @@ export default class ViewabilityTracker {
 
     private _findFirstVisibleIndexUsingBS(bias = 0): number {
         const count = this._layouts.length;
+        if (count <= 0){
+            return 0;
+        }
         return BinarySearch.findClosestHigherValueIndex(count, this._visibleWindow.start + bias, this._valueExtractorForBinarySearch);
     }
 
