@@ -1,3 +1,5 @@
+run with yarn build to create dist folder before use
+
 # RecyclerListView
 
 [![npm version](https://img.shields.io/npm/v/recyclerlistview.svg)](https://www.npmjs.com/package/recyclerlistview)
