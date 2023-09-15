@@ -266,17 +266,17 @@ export default class ViewabilityTracker {
 
     private _setRelevantBounds(itemRect: Layout, relevantDim: Range): void {
         if (this._isHorizontal) {
-            if(itemRect){
+            if (itemRect) {
                 relevantDim.end = itemRect.x + itemRect.width;
                 relevantDim.start = itemRect.x;
-            }else{
+            } else {
                 relevantDim.end = relevantDim.start = 0;
             }
         } else {
-            if(itemRect){
+            if (itemRect) {
                 relevantDim.end = itemRect.y + itemRect.height;
                 relevantDim.start = itemRect.y;
-            }else{
+            } else {
                 relevantDim.end = relevantDim.start = 0;
             }
         }
