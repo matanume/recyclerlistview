@@ -151,7 +151,7 @@ export default class VirtualRenderer {
             let offset = 0;
             if (this._layoutManager && this._params) {
                 firstVisibleIndex = Math.min(this._params.itemCount - 1, firstVisibleIndex);
-                const point = this._layoutManager.getOffsetForIndex(firstVisibleIndex);
+                const point = (firstVisibleIndex < 0) ? {x: 0, y: 0} : this._layoutManager.getOffsetForIndex(firstVisibleIndex);
                 this._scrollOnNextUpdate(point);
                 offset = this._params.isHorizontal ? point.x : point.y;
             }
