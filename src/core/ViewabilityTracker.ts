@@ -78,13 +78,13 @@ export default class ViewabilityTracker {
         const shouldForceScroll = this._actualOffset >= 0 && this._currentOffset >= (this._maxOffset - this._windowBound + 
                                      (windowCorrection ? windowCorrection.startCorrection : 0) + 
                                      (windowCorrection ? windowCorrection.windowShift : 0));
-        this.forceRefreshWithOffset(this._currentOffset);
+        this.forceRefreshWithOffset(this._currentOffset, windowCorrection);
         return shouldForceScroll;
     }
 
-    public forceRefreshWithOffset(offset: number): void {
+    public forceRefreshWithOffset(offset: number, windowCorrection?: WindowCorrection): void {
         this._currentOffset = -1;
-        this.updateOffset(offset, false, this._defaultCorrection);
+        this.updateOffset(offset, false, windowCorrection ? windowCorrection : this._defaultCorrection);
     }
 
     public updateOffset(offset: number, isActual: boolean, windowCorrection: WindowCorrection): void {
