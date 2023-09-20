@@ -159,10 +159,10 @@ export default class VirtualRenderer {
         }
     }
 
-    public refresh(): void {
+    public refresh(windowCorrection: WindowCorrection): void {
         if (this._viewabilityTracker) {
             this._prepareViewabilityTracker();
-            this._viewabilityTracker.forceRefresh();
+            this._viewabilityTracker.forceRefresh(windowCorrection);
         }
     }
 
