@@ -512,8 +512,8 @@ export default class RecyclerListView<P extends RecyclerListViewProps, S extends
             if (newProps.layoutProvider.shouldRefreshWithAnchoring) {
                 this._virtualRenderer.refreshWithAnchor();
             } else {
-                let wc = this._getWindowCorrection(0,0,this.props);
-                if (wc.startCorrection + wc.windowShift > 0){
+                const wc = this._getWindowCorrection(0, 0, this.props);
+                if (wc.startCorrection + wc.windowShift > 0) {
                     this._virtualRenderer.refresh(wc);
                 } else {
                     this._virtualRenderer.refresh();
