@@ -75,8 +75,8 @@ export default class ViewabilityTracker {
     }
 
     public forceRefresh(windowCorrection?: WindowCorrection): boolean {
-        const shouldForceScroll = this._actualOffset >= 0 && this._currentOffset >= (this._maxOffset - this._windowBound + 
-                                     (windowCorrection ? windowCorrection.startCorrection : 0) + 
+        const shouldForceScroll = this._actualOffset >= 0 && this._currentOffset >= (this._maxOffset - this._windowBound +
+                                     (windowCorrection ? windowCorrection.startCorrection : 0) +
                                      (windowCorrection ? windowCorrection.windowShift : 0));
         this.forceRefreshWithOffset(this._currentOffset, windowCorrection);
         return shouldForceScroll;
